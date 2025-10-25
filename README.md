@@ -4,6 +4,25 @@
 >
 > This project is built through iterative debugging, real-world testing, and community feedback. Every fix comes from actual Facebook DOM quirks discovered in the wild!
 
+---
+
+> ### 🆕 **NEW: Visual Thread Viewer!**
+>
+> Export your Facebook comments and visualize them beautifully with our **interactive thread viewer**!
+>
+> 👉 **[Load your export at facebook-thread-viewer.lovable.app](https://facebook-thread-viewer.lovable.app)**
+>
+> ✨ Features:
+> - 🎨 Beautiful nested comment visualization
+> - 🔍 Search and filter threads
+> - 📊 Thread analytics and insights
+> - 💾 Load JSON exports directly in your browser
+> - 📱 Mobile-friendly responsive design
+>
+> Simply export your comments using this scraper, then upload the JSON file to the viewer for a stunning visual representation!
+
+---
+
 ## 🚀 Quickstart
 
 1. **Install Extension**: [Tampermonkey](https://tampermonkey.net/) (Chrome/Edge) or [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/) (Firefox)
@@ -12,6 +31,7 @@
 4. **Click "Start Scraping"** in the floating panel (top-right corner)
 5. **Watch it work** - automatically expands replies, detects nesting depth, highlights comments
 6. **Export** - Choose CSV (flat) or JSON (hierarchical with nested replies)
+7. **🆕 Visualize** *(optional)* - Upload your JSON export to [facebook-thread-viewer.lovable.app](https://facebook-thread-viewer.lovable.app) for beautiful interactive visualization!
 
 **That's it!** 🎯 The scraper handles nested replies, multi-level threads, and preserves parent-child relationships automatically.
 
