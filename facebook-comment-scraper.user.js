@@ -1,11 +1,11 @@
 // ==UserScript==
-// @name         Facebook Comment Modal Scraper - With Max Limit
+// @name         Facebook Comment Exporter
 // @namespace    http://tampermonkey.net/
-// @version      16.7
-// @description  CRITICAL FIX: Fixed extractComment function - v16.2 fix was incomplete, still rejected profile links with comment_id in query params!
-// @author       Rick
-// @downloadURL  https://gitlab.disrex.nl/internal-tools/facebook-comment-scraper-userscript/-/raw/master/facebook-comment-scraper.user.js
-// @updateURL    https://gitlab.disrex.nl/internal-tools/facebook-comment-scraper-userscript/-/raw/master/facebook-comment-scraper.user.js
+// @version      1.0
+// @description  Open-source Facebook comment scraper with nested reply support, hierarchical export (CSV/JSON), and multi-strategy depth detection
+// @author       Rick Bouma (Disrex Group)
+// @downloadURL  https://github.com/disrex-group/FB-Comments-Exporter-User-script/raw/refs/heads/master/facebook-comment-scraper.user.js
+// @updateURL    https://github.com/disrex-group/FB-Comments-Exporter-User-script/raw/refs/heads/master/facebook-comment-scraper.user.js
 // @match        https://www.facebook.com/*
 // @match        https://m.facebook.com/*
 // @grant        none

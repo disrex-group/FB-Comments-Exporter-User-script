@@ -4,6 +4,19 @@
 >
 > This project is built through iterative debugging, real-world testing, and community feedback. Every fix comes from actual Facebook DOM quirks discovered in the wild!
 
+## 🚀 Quickstart
+
+1. **Install Extension**: [Tampermonkey](https://tampermonkey.net/) (Chrome/Edge) or [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/) (Firefox)
+2. **Install Script**: [Click here to install the userscript](https://github.com/disrex-group/FB-Comments-Exporter-User-script/raw/refs/heads/master/facebook-comment-scraper.user.js)
+3. **Open any Facebook post** with comments
+4. **Click "Start Scraping"** in the floating panel (top-right corner)
+5. **Watch it work** - automatically expands replies, detects nesting depth, highlights comments
+6. **Export** - Choose CSV (flat) or JSON (hierarchical with nested replies)
+
+**That's it!** 🎯 The scraper handles nested replies, multi-level threads, and preserves parent-child relationships automatically.
+
+---
+
 ## Overview
 
 The Facebook Comment Scraper is a powerful userscript that enables you to scrape and export comments from Facebook posts, including full support for nested replies and hierarchical comment threads. It adds a floating interface to Facebook pages with automatic comment collection, depth detection, and export to both CSV and JSON formats.
@@ -49,12 +62,12 @@ The Facebook Comment Scraper is a powerful userscript that enables you to scrape
 
 Click the button below to install the Facebook Comment Scraper:
 
-[![Install Facebook Comment Scraper](https://img.shields.io/badge/Install-Facebook%20Comment%20Scraper-brightgreen)](https://gitlab.disrex.nl/internal-tools/facebook-comment-scraper-userscript/-/raw/master/facebook-comment-scraper.user.js)
+[![Install Facebook Comment Scraper](https://img.shields.io/badge/Install-Facebook%20Comment%20Scraper-brightgreen)](https://github.com/disrex-group/FB-Comments-Exporter-User-script/raw/refs/heads/master/facebook-comment-scraper.user.js)
 
 ### Manual Installation
 
 1. Install Tampermonkey or Greasemonkey for your browser
-2. Navigate to the [raw userscript file](https://gitlab.disrex.nl/internal-tools/facebook-comment-scraper-userscript/-/raw/master/facebook-comment-scraper.user.js)
+2. Navigate to the [raw userscript file](https://github.com/disrex-group/FB-Comments-Exporter-User-script/raw/refs/heads/master/facebook-comment-scraper.user.js)
 3. Your userscript manager will prompt you to install it
 4. Click "Install" to add the script
 
@@ -94,32 +107,20 @@ The exported files include:
 - **Parent ID**: Reference to parent comment
 - **Reply To Author**: Name of the author being replied to
 
-## Recent Fixes & Improvements
+## Version History
 
-### v16.7 (Latest)
-- 🔥 **CRITICAL**: Fixed `extractComment()` function - completed v16.2 fix for profile links with `comment_id` in query params
-- ✅ Authors now extracted correctly from all profile link formats
-
-### v16.6
-- 🔥 **CRITICAL**: Added "Antwoord" (Reply) and "Reply" to aria-label filter - was skipping ALL replies!
-- ✅ Nested replies now properly scraped
-
-### v16.5
-- 🎯 Implemented proper nested article detection using DOM hierarchy
-- 🎯 Added aria-label "Antwoord" pattern parsing for Dutch Facebook
-- ✅ Multi-level nesting now works correctly
-
-### v16.4
-- 🐛 Fixed overly aggressive 'u' character filter that rejected names like "Luke", "Robert Weber"
-- ✅ Improved name extraction accuracy
-
-### v16.3
-- 🐛 Fixed recursive name extraction consistency
-- ✅ Multi-level depth detection improvements
-
-### v16.2
-- 🐛 Fixed profile link filtering (query parameter handling)
-- ✅ Profile URLs now extracted correctly
+### v1.0 (Initial Release)
+- 🎉 **Initial public release** on GitHub!
+- ✅ Multi-level nested reply detection (DOM hierarchy + aria-label patterns)
+- ✅ Dual export formats: CSV (flat) and JSON (hierarchical)
+- ✅ Color-coded depth visualization
+- ✅ Robust author extraction with multiple fallback strategies
+- ✅ Profile link handling (supports query parameters)
+- ✅ Smart name filtering (handles Dutch/English, timestamps, special characters)
+- ✅ Support for both "Opmerking" (Comment) and "Antwoord" (Reply) aria-labels
+- ✅ Real-time scraping statistics and progress tracking
+- ✅ Debug mode for troubleshooting
+- ✅ Automatic depth detection using 5 different strategies
 
 ## Known Limitations
 
@@ -156,7 +157,7 @@ Rick - r.bouma@disrex.nl
 
 ## Version
 
-Current version: **16.7**
+Current version: **1.0**
 
 ## License
 
