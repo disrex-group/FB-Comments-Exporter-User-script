@@ -30,10 +30,10 @@
 3. **Open any Facebook post** with comments
 4. **Click "Start Scraping"** in the floating panel (top-right corner)
 5. **Watch it work** - automatically expands replies, detects nesting depth, highlights comments
-6. **Export** - Choose CSV (flat) or JSON (hierarchical with nested replies)
+6. **Auto-Export** - JSON file downloads automatically when complete (no prompts!)
 7. **🆕 Visualize** *(optional)* - Upload your JSON export to [facebook-thread-viewer.lovable.app](https://facebook-thread-viewer.lovable.app) for beautiful interactive visualization!
 
-**That's it!** 🎯 The scraper handles nested replies, multi-level threads, and preserves parent-child relationships automatically.
+**That's it!** 🎯 The scraper handles nested replies, multi-level threads, and **automatically downloads JSON** - no clicking export buttons!
 
 ---
 
@@ -51,9 +51,10 @@ The Facebook Comment Scraper is a powerful userscript that enables you to scrape
 - **Real-time Statistics**: Shows progress including main comments, replies, and depth distribution
 
 ### Export Capabilities
-- **CSV Export**: Flat structure export with all comment data
-- **JSON Export**: Hierarchical export preserving parent-child relationships
-- **Rich Data**: Includes author name, profile URL, profile image, timestamp, likes, comment text, depth level
+- **Auto-Download JSON**: Automatically downloads JSON when scraping completes (no prompts!)
+- **Hierarchical Structure**: JSON export preserves full parent-child relationships and thread nesting
+- **CSV Available**: Manual CSV export option via browser console if needed
+- **Rich Data**: Includes author name, profile URL, profile image, timestamp, likes, comment text, depth level, detection method
 
 ### Visual Features
 - **Color-Coded Highlighting**: Comments are highlighted by depth (red=main, orange=level 1, yellow=level 2, green=level 3+)
@@ -103,10 +104,10 @@ Click the button below to install the Facebook Comment Scraper:
    - Expand replies (including nested replies)
    - Detect comment depth and hierarchy
    - Collect comprehensive comment data
+   - **Download JSON export when complete** (no additional clicks needed!)
 6. Watch the real-time statistics showing main comments, replies, and depth distribution
-7. Once complete, choose your export format:
-   - **Export to CSV**: Flat file with all data
-   - **Export to JSON**: Hierarchical structure preserving reply relationships
+7. The JSON file (`fb_modal_YYYY-MM-DD.json`) downloads automatically to your browser's download folder
+8. Check the browser console (F12) for detailed statistics and logs
 
 ## Scraped Data
 
@@ -128,6 +129,11 @@ The exported files include:
 - **Reply To Author**: Name of the author being replied to
 
 ## Version History
+
+### v1.1 (Current)
+- 🚀 **Auto-download JSON export** - No more confirmation dialogs! JSON downloads automatically when scraping completes
+- ✅ Stats logged to console instead of alert dialogs
+- ✅ Cleaner UX - no interruptions, just automatic export
 
 ### v1.0 (Initial Release)
 - 🎉 **Initial public release** on GitHub!
@@ -177,7 +183,7 @@ Rick - r.bouma@disrex.nl
 
 ## Version
 
-Current version: **1.0**
+Current version: **1.1**
 
 ## License
 

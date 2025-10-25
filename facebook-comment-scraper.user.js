@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Facebook Comment Exporter
 // @namespace    http://tampermonkey.net/
-// @version      1.0
-// @description  Open-source Facebook comment scraper with nested reply support, hierarchical export (CSV/JSON), and multi-strategy depth detection
+// @version      1.1
+// @description  Open-source Facebook comment scraper with nested reply support, auto-downloads JSON export, hierarchical structure, and multi-strategy depth detection
 // @author       Rick Bouma (Disrex Group)
 // @downloadURL  https://github.com/disrex-group/FB-Comments-Exporter-User-script/raw/refs/heads/master/facebook-comment-scraper.user.js
 // @updateURL    https://github.com/disrex-group/FB-Comments-Exporter-User-script/raw/refs/heads/master/facebook-comment-scraper.user.js
@@ -1457,33 +1457,21 @@
             const unloadedCount = comments.filter(c => c.hasUnloadedReplies).length;
             const timestamp = new Date().toISOString().split('T')[0];
 
-            let message =
-                `✅ Scraped ${comments.length} comments${maxComments > 0 ? ` (limit: ${maxComments})` : ''}!\n\n` +
-                `📊 By depth:\n`;
-
-            Object.keys(depthCounts).sort().forEach(depth => {
-                const label = depth === '0' ? 'Main' : `Level ${depth}`;
-                message += `├─ ${label}: ${depthCounts[depth]}\n`;
-            });
-
-            message += `\n🔧 Actions:\n└─ Buttons: ${stats.buttonsClicked}\n\n`;
+            // Log stats to console
+            console.log(`✅ Scraped ${comments.length} comments${maxComments > 0 ? ` (limit: ${maxComments})` : ''}!`);
+            console.log(`📊 Depth Distribution:`, depthCounts);
+            console.log(`🔧 Buttons Clicked: ${stats.buttonsClicked}`);
 
             if (unloadedCount > 0) {
-                message += `⚠️ ${unloadedCount} may have unloaded replies!\n\n`;
+                console.warn(`⚠️ ${unloadedCount} comments may have unloaded replies!`);
             }
 
-            message += `💾 Export?\nOK = JSON | Cancel = CSV`;
-
-            const useJSON = confirm(message);
-
-            if (useJSON) {
-                downloadJSON(comments, `fb_modal_${timestamp}.json`);
-            } else {
-                downloadCSV(comments, `fb_modal_${timestamp}.csv`);
-            }
+            // Automatically download JSON (no confirmation dialog)
+            console.log(`💾 Auto-downloading JSON export: fb_modal_${timestamp}.json`);
+            downloadJSON(comments, `fb_modal_${timestamp}.json`);
 
             updateUI('✅ Done!', {
-                statusText: 'Downloaded',
+                statusText: 'JSON Downloaded',
                 showStats: true
             });
 
